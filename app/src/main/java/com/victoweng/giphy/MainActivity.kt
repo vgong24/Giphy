@@ -1,6 +1,8 @@
 package com.victoweng.giphy
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -43,6 +45,19 @@ class MainActivity : AppCompatActivity() {
             gifAdapter.setGifList(it)
         })
 
-        mainViewModel.fetchGifs("cheeseburgers")
+        search_edit_text.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(text: Editable?) {
+
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+            }
+
+            override fun onTextChanged(text: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                mainViewModel.fetchGifs(text.toString())
+            }
+
+        })
     }
 }

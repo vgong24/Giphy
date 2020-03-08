@@ -22,7 +22,6 @@ class MainViewModel(val gifApi: GiphyApi) : ViewModel() {
 
         CoroutineScope(IO).launch {
             val list = gifApi.fetchGifs(hashMap)
-            Log.d("CLOWN", "gif result: " + list.data?.size);
             gifsLiveData.postValue(list)
         }
     }
