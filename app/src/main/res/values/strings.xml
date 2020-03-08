@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Giphy</string>
+    <string name="api_key" translatable="false">wWh2zY2UjUJR2xDfC1dY1DDbYrvaHxFQ</string>
+</resources>
